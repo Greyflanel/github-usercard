@@ -3,6 +3,15 @@
            https://api.github.com/users/<your name>
 */
 
+axios
+  .get("https://api.github.com/users/Greyflanel")
+  .then(response => {
+    console.log(response);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
@@ -25,6 +34,36 @@
 */
 
 const followersArray = [];
+
+function Card(object) {
+  const newCard = document.createElement("div"),
+    newImage = document.createElement("img"),
+    newCardInfo = document.createElement("div"),
+    newName = document.createElement("h3"),
+    newUserName = document.createElement("p"),
+    newLocation = document.createElement("p"),
+    newProfile = document.createElement("a"),
+    followers = documnet.createElement("p"),
+    following = document.createElement("p"),
+    usersBio = document.createElement("p");
+
+  newCard.classList.add("card");
+  newCardInfo.classList.add("card-info");
+  newName.classList.add("name");
+  newUserName.classList.add("username");
+
+  newCard.appendChild(newImage);
+  newCard.appendChild(newCardInfo);
+  newCardInfo.appendChild(newName);
+  newCardInfo.appendChild(newUserName);
+  newCardInfo.appendChild(newLocation);
+  newCardInfo.appendChild(newProfile);
+  newCardInfo.appendChild(followers);
+  newCardInfo.appendChild(following);
+  newCardInfo.appendChild(usersBio);
+
+  return card;
+}
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
